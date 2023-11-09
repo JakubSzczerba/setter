@@ -53,6 +53,6 @@ class HistoryService
 
     public function getValues(): array
     {
-        return $this->historyRepository->findAll();
+        return $this->historyRepository->getAll();
     }
 }

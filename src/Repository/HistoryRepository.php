@@ -34,4 +34,14 @@ class HistoryRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function getAll(int $page = 1, int $limit = 10, string $sortBy = 'createdAt', string $sortOrder = 'DESC'): array
+    {
+        $qb = $this->createQueryBuilder('h')
+            ->orderBy('h.' . $sortBy, $sortOrder)
+            ->setFirstResult(($page - 1) * $limit)
+            ->setMaxResults($limit);
+
+        return $qb->getQuery()->getResult();
+    }
 }
