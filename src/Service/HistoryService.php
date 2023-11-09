@@ -50,4 +50,9 @@ class HistoryService
 
         return $message;
     }
+
+    public function getValues(): array
+    {
+        return $this->historyRepository->findAll();
+    }
 }
