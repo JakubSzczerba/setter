@@ -23,6 +23,7 @@ services:
       APP_ENV: "dev"
       APP_SECRET: "50bc5c94dc493ff013f532b21bb4d2b8"
       APP_HOSTNAME: "exchange.local"
+      CORS_ALLOW_ORIGIN: '^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'
 
   nginx:
     image: nginx:1.19
