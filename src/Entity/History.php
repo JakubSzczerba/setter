@@ -51,6 +51,7 @@ class History
     public function setFirstIn(int $firstIn): static
     {
         $this->firstIn = $firstIn;
+        $this->secondOut = $firstIn;
 
         return $this;
     }
@@ -63,6 +64,7 @@ class History
     public function setSecondIn(int $secondIn): static
     {
         $this->secondIn = $secondIn;
+        $this->firstOut = $secondIn;
 
         return $this;
     }
@@ -72,23 +74,9 @@ class History
         return $this->firstOut;
     }
 
-    public function setFirstOut(int $firstOut): static
-    {
-        $this->firstOut = $firstOut;
-
-        return $this;
-    }
-
     public function getSecondOut(): int
     {
         return $this->secondOut;
-    }
-
-    public function setSecondOut(int $secondOut): static
-    {
-        $this->secondOut = $secondOut;
-
-        return $this;
     }
 
     public function getCreatedAt(): \DateTimeImmutable

@@ -27,4 +27,11 @@ class HistoryRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, History::class);
     }
+
+    public function getHistory(): array
+    {
+        $qb =  $this->createQueryBuilder('h');
+
+        return $qb->getQuery()->getResult();
+    }
 }
